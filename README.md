@@ -2,11 +2,11 @@
 
 Official repository for the paper "[Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step]()".
 
-[[📖 Paper]()] [[🤗 Huggingface Checkpoints]()]
+[[📖 Paper]()] [[🤗 HF Checkpoints]()] [[🤗 HF Datasets (coming)]()]
 
 ## 💥 News
-- **[2024.01.23]** We release the code for autoregressive image generation with test-time scaling (ORM, PARM) and DPO 🚀
-- **[2024.01.23]** We release the [arXiv paper]() 🚀
+- **[2025.01.23]** We release the code for autoregressive image generation with test-time scaling (ORM, PARM) and DPO 🚀
+- **[2025.01.23]** We release the [arXiv paper]() 🚀
 
 ## 👀 Reasoning in Image Generation
 
@@ -35,3 +35,13 @@ Furthermore, given the pivotal role of reward models in our findings, we propose
 <p align="center">
     <img src="figs/fig3.jpg" width="90%"> <br>
 </p>
+
+## 💪 Get Started
+
+## 🧠 Related Work
+
+Explore our additional research on **CoT Reasoning**:
+
+- **[MathVerse]** [MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?](https://mathverse-cuhk.github.io/)
+- **[MAVIS]** [MAVIS: Mathematical Visual Instruction Tuning with an Automatic Data Engine](https://arxiv.org/pdf/2407.08739)
+
