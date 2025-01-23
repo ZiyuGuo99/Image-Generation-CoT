@@ -38,19 +38,19 @@ Furthermore, given the pivotal role of reward models in our findings, we propose
 
 ## 💪 Get Started
 
-### 1. Scaling Test-time Computation
+### 1. Scaling Test-time Computation 📈
 
 #### 1.1. Zero-shot ORM
 #### 1.2. Fine-tuned ORM
 #### 1.3. PARM
 
-### 2. Preference Alignment with DPO
+### 2. Preference Alignment with DPO 🔧
 
 #### 2.1. Initial DPO
 #### 2.2. Iterative DPO
 #### 2.3. Iterative DPO with PARM Guidance
 
-### 3. Integration of Reasoning Strategies
+### 3. Reasoning Strategy Integration 🧩
 
 #### 3.1. Iterative DPO with PARM Guidance + PARM
 
