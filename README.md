@@ -1,1 +1,1 @@
-# Image-Generation-CoT
+# Can We Generate Images with CoT?
