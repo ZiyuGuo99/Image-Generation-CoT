@@ -40,8 +40,10 @@ Furthermore, given the pivotal role of reward models in our findings, we propose
 
 ## 🧠 Related Work
 
-Explore our additional research on **CoT Reasoning**:
+Explore our additional research on **CoT Reasoning** and **3D Vision**:
 
 - **[MathVerse]** [MathVerse: Does Your Multi-modal LLM Truly See the Diagrams in Visual Math Problems?](https://mathverse-cuhk.github.io/)
 - **[MAVIS]** [MAVIS: Mathematical Visual Instruction Tuning with an Automatic Data Engine](https://arxiv.org/pdf/2407.08739)
-
+- **[SAM2Point]** [SAM2Point: Segment Any 3D as Videos in Zero-shot and Promptable Manners](https://sam2point.github.io/)
+- **[Point-Bind & Point-LLM]** [Multi-modality 3D Understanding, Generation, and Instruction Following](https://github.com/ZiyuGuo99/Point-Bind_Point-LLM)
+- **[MMSearch]** [MMSearch: Unveiling the Potential of Large Models as Multi-modal Search Engines](https://mmsearch.github.io/)
