@@ -55,6 +55,23 @@ Furthermore, given the pivotal role of reward models in our findings, we propose
 #### 3.1. Iterative DPO with PARM Guidance + PARM
 
 
+## :white_check_mark: Citation
+
+If you find this project useful for your research or applications, please kindly cite using this BibTeX:
+
+```latex
+@misc{guo2025generateimagescotlets,
+      title={Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step}, 
+      author={Ziyu Guo and Renrui Zhang and Chengzhuo Tong and Zhizheng Zhao and Peng Gao and Hongsheng Li and Pheng-Ann Heng},
+      year={2025},
+      eprint={2501.13926},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2501.13926}, 
+}
+```
+
+
 ## 🧠 Related Work
 
 Explore our additional research on **CoT Reasoning** and **3D Vision**:
