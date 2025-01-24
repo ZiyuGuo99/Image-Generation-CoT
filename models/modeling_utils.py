@@ -760,10 +760,10 @@ class ModelMixin(torch.nn.Module, PushToHubMixin):
                         for pat in cls._keys_to_ignore_on_load_unexpected:
                             unexpected_keys = [k for k in unexpected_keys if re.search(pat, k) is None]
 
-                    if len(unexpected_keys) > 0:
-                        logger.warning(
-                            f"Some weights of the model checkpoint were not used when initializing {cls.__name__}: \n {[', '.join(unexpected_keys)]}"
-                        )
+                    # if len(unexpected_keys) > 0:
+                    #     logger.warning(
+                    #         f"Some weights of the model checkpoint were not used when initializing {cls.__name__}: \n {[', '.join(unexpected_keys)]}"
+                    #     )
 
                 else:  # else let accelerate handle loading and dispatching.
                     # Load weights and dispatch according to the device_map

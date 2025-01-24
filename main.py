@@ -100,12 +100,6 @@ def parse_args():
         help="Number of timesteps for generation",
     )
     parser.add_argument(
-        "--mode",
-        type=str,
-        default='t2i',
-        help="Mode of operation",
-    )
-    parser.add_argument(
         "--eval_num",
         type=int,
         default=4,
@@ -120,13 +114,13 @@ def parse_args():
     parser.add_argument(
         "--reward_model",
         type=str,
-        default=None,
+        default="",
         help="Mode of reward model",
     )
     parser.add_argument(
-        '--dpo', 
-        action='store_true',  
-        help="Enable DPO"
+        "--dpo_model",
+        type=str,
+        default="",
     )
     opt = parser.parse_args()
     return opt
@@ -134,20 +128,41 @@ def parse_args():
 if __name__ == "__main__":
     opt = parse_args()
 
-    if opt.dpo:     
-        print("Running with DPO...")
+    outputname_list = [i for i in [opt.model, opt.reward_model, opt.dpo_model] if i]
+    opt.outdir = "results/" + "_".join(outputname_list)
+    print(f"Result will be saved under: {opt.outdir}")
 
-    if opt.reward_model == None:
-        print("Running without reward model...")
-        opt.outdir = "results/show-o_dpo" if opt.dpo else "results/show-o"
-        run_showo(opt)
-    elif opt.reward_model == 'orm':
-        print("Running with reward model: ORM")
-        opt.outdir = "results/show-o_orm_dpo" if opt.dpo else "results/show-o_orm"
+    if opt.dpo_model == 'dpo':
+        opt.dpo_model_path = 'ckpts/dpo'
+        print("Running Initial DPO...")
+    elif opt.dpo_model == 'dpo_iter':
+        opt.dpo_model_path = 'ckpts/dpo_iter'
+        print("Running Iterative DPO...")
+    elif opt.dpo_model == 'dpo_iter_parm_gudie':
+        opt.dpo_model_path = 'ckpts/dpo_iter_parm_gudie'
+        print("Running Iterative DPO with PARM Guidance...")
+    elif opt.dpo_model == '':
+        opt.dpo_model_path = 'showlab/show-o'
+        print("Running without DPO...")
+    else:
+        raise ValueError(f'DPO model: {opt.dpo_model} is not supported yet...')
+    
+
+    if opt.reward_model == 'orm_zs':
+        opt.reward_model_path = 'lmms-lab/llava-onevision-qwen2-7b-ov'
+        print("Running Zero-shot ORM...")
+        run_orm(opt)
+    elif opt.reward_model == 'orm_ft':
+        opt.reward_model_path = 'ckpts/orm_ft'
+        print("Running Fine-tuned ORM...")
         run_orm(opt)
     elif opt.reward_model == 'parm':
-        print("Running with reward model: PARM")
-        opt.outdir = "results/show-o_parm_dpo_20" if opt.dpo else "results/show-o_parm"
+        opt.reward_model_path = 'ckpts/parm'
+        print("Running PARM...")
         run_parm(opt)
+    elif opt.reward_model == '':
+        opt.reward_model_path = ''
+        print("Running without Reward Model...")
+        run_showo(opt)
     else:
-        raise ValueError('mode is not supported')
+        raise ValueError(f'Reward model: {opt.reward_model} is not supported yet...')
