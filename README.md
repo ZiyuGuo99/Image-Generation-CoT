@@ -41,19 +41,73 @@ Furthermore, given the pivotal role of reward models in our findings, we propose
 ### 1. Scaling Test-time Computation 📈
 
 #### 1.1. Zero-shot ORM
+Run the following command to use the zero-shot ORM:
+```
+torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
+--prompts_file geneval/prompts/generation_prompts.txt \
+--metadata_file geneval/prompts/evaluation_metadata.jsonl \
+--config config.yaml \
+--reward_model orm_zs 
+```
 #### 1.2. Fine-tuned ORM
+Run the following command to use the fine-tuned ORM:
+```
+torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
+--prompts_file geneval/prompts/generation_prompts.txt \
+--metadata_file geneval/prompts/evaluation_metadata.jsonl \
+--config config.yaml \
+--reward_model orm_ft
+```
 #### 1.3. PARM
-
+Run the following command to use PARM:
+```
+torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
+--prompts_file geneval/prompts/generation_prompts.txt \
+--metadata_file geneval/prompts/evaluation_metadata.jsonl \
+--config config.yaml \
+--reward_model parm 
+```
 ### 2. Preference Alignment with DPO 🔧
 
 #### 2.1. Initial DPO
+Run the following command to use intial DPO:
+```
+torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
+--prompts_file geneval/prompts/generation_prompts.txt \
+--metadata_file geneval/prompts/evaluation_metadata.jsonl \
+--config config.yaml \
+--dpo_model dpo
+```
 #### 2.2. Iterative DPO
+Run the following command to use iterative DPO:
+```
+torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
+--prompts_file geneval/prompts/generation_prompts.txt \
+--metadata_file geneval/prompts/evaluation_metadata.jsonl \
+--config config.yaml \
+--dpo_model dpo_iter
+```
 #### 2.3. Iterative DPO with PARM Guidance
-
+Run the following command to use iterative DPO with PARM guidance:
+```
+torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
+--prompts_file geneval/prompts/generation_prompts.txt \
+--metadata_file geneval/prompts/evaluation_metadata.jsonl \
+--config config.yaml \
+--dpo_model dpo_iter_parm_gudie
+```
 ### 3. Reasoning Strategy Integration 🧩
 
 #### 3.1. Iterative DPO with PARM Guidance + PARM
-
+Run the following command to combine iterative DPO with PARM guidance and PARM:
+```
+torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
+--prompts_file geneval/prompts/generation_prompts.txt \
+--metadata_file geneval/prompts/evaluation_metadata.jsonl \
+--config config.yaml \
+--reward_model parm \
+--dpo_model dpo_iter_parm_gudie
+```
 
 ## :white_check_mark: Citation
 
