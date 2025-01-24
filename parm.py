@@ -329,7 +329,7 @@ def main(opt):
             "validation_prompts_file": opt.validation_prompts_file,
             "guidance_scale": opt.guidance_scale,
             "generation_timesteps": opt.generation_timesteps,
-            "mode": opt.mode,
+            "mode": "t2i",
             "eval_num": opt.eval_num,
             "search_num": opt.search_num,
             "config": opt.config,
@@ -346,9 +346,7 @@ def main(opt):
                                                "<|v2v|>", "<|lvg|>"),
                                            ignore_id=-100, cond_dropout_prob=config.training.cond_dropout_prob)
 
-        if opt.dpo:     config.model.showo.pretrained_model_path = "./ckpts/dpo_ft_parm"
-        print(f"Loading Showo from {config.model.showo.pretrained_model_path}")
-        model = Showo.from_pretrained(config.model.showo.pretrained_model_path).to(device)
+        model = Showo.from_pretrained(opt.dpo_model_path).to(device)
         model.eval()
 
         mask_token_id = model.config.mask_token_id
@@ -369,7 +367,7 @@ def main(opt):
     vq_model.eval()
 
     # Load selector
-    selector = ImageSelector(device=device, device_map={"": device}, pretrained="ckpts/parm")
+    selector = ImageSelector(device=device, device_map={"": device}, pretrained=opt.reward_model_path)
 
     dist.barrier()
     global_n_samples = dist.get_world_size()
