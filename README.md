@@ -1,6 +1,6 @@
 # Can We Generate Images 🌇 with CoT 🧠?
 
-Official repository for the paper "[Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step]()".
+Official repository for the paper "[Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step](https://github.com/ZiyuGuo99/Image-Generation-CoT/blob/main/Can%20We%20Generate%20Images%20with%20CoT%3F.pdf)".
 
 [[📖 Paper]()] [[🤗 HF Checkpoints]()] [[🤗 HF Datasets (coming)]()]
 
