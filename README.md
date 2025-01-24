@@ -2,11 +2,11 @@
 
 Official repository for the paper "[Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step](https://github.com/ZiyuGuo99/Image-Generation-CoT/blob/main/Can%20We%20Generate%20Images%20with%20CoT%3F.pdf)".
 
-[[📖 Paper]()] [[🤗 HF Checkpoints]()] [[🤗 HF Datasets (coming)]()]
+[[📖 Paper](https://arxiv.org/pdf/2501.13926)] [[🤗 HF Checkpoints]()] [[🤗 HF Datasets (coming)]()]
 
 ## 💥 News
 - **[2025.01.23]** We release the code for autoregressive image generation with test-time scaling (ORM, PARM) and DPO 🚀
-- **[2025.01.23]** We release the [arXiv paper]() 🚀
+- **[2025.01.23]** We release the [arXiv paper](https://arxiv.org/pdf/2501.13926) 🚀
 
 ## 👀 Reasoning in Image Generation
 
