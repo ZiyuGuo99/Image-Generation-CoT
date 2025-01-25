@@ -38,6 +38,8 @@ Furthermore, given the pivotal role of reward models in our findings, we propose
 
 ## 💪 Get Started
 
+### 0. Baseline Model ([Show-o](https://github.com/showlab/Show-o)) 🎨
+
 ### 1. Scaling Test-time Computation 📈
 
 #### 1.1. Zero-shot ORM
