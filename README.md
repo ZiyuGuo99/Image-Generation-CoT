@@ -39,7 +39,13 @@ Furthermore, given the pivotal role of reward models in our findings, we propose
 ## 💪 Get Started
 
 ### 0. Baseline Model ([Show-o](https://github.com/showlab/Show-o)) 🎨
-
+Run the following command to use the baseline model:
+```
+torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
+--prompts_file geneval/prompts/generation_prompts.txt \
+--metadata_file geneval/prompts/evaluation_metadata.jsonl \
+--config config.yaml 
+```
 ### 1. Scaling Test-time Computation 📈
 
 #### 1.1. Zero-shot ORM
