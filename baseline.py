@@ -305,7 +305,7 @@ def main(opt):
     vq_model.eval()
 
     # Load selector
-    selector = ImageSelector(device=device, device_map={"": device}, pretrained=opt.reward_model_path)
+    selector = None
 
     dist.barrier()
     global_n_samples = dist.get_world_size()
