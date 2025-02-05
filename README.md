@@ -60,6 +60,7 @@ Create a conda environment:
    git clone https://github.com/open-mmlab/mmdetection.git
 cd mmdetection; git checkout 2.x
 pip install -v -e .
+git clone https://github.com/LLaVA-VL/LLaVA-NeXT && cd LLaVA-NeXT && pip install -e ".[train]"
    ```
 
 ### Prepare Checkpoints
