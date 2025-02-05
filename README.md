@@ -37,6 +37,40 @@ Furthermore, given the pivotal role of reward models in our findings, we propose
 </p>
 
 ## 💪 Get Started
+### Installation
+
+Clone the repository:
+
+   ```bash
+   git clone https://github.com/ZiyuGuo99/Image-Generation-CoT.git
+   cd Image-Generation-CoT
+   ```
+
+Create a conda environment:
+
+   ```bash
+   conda create -n img_cot python=3.10
+   conda activate img_cot
+   ```
+   Please follow the instructions [here](https://pytorch.org/get-started/locally/) to install both PyTorch and TorchVision dependencies.
+
+   Install additional dependencies:
+   ```bash
+   pip install -r requirements.txt
+   git clone https://github.com/open-mmlab/mmdetection.git
+cd mmdetection; git checkout 2.x
+pip install -v -e .
+   ```
+
+### Prepare Checkpoints
+
+   - Download reward models and DPO checkpoints from [this link](https://huggingface.co/ZiyuG/Image-Generation-CoT), and put then under `Image-Generation-CoT/ckpts/`.
+
+   - Download the Mask2Former object detector for GenEval evaluation by running following command:
+        ```bash
+        mkdir geneval/evaluation/object
+        bash geneval/evaluation/download_models.sh geneval/evaluation/object
+        ```
 
 ### 0. Baseline Model ([Show-o](https://github.com/showlab/Show-o)) 🎨
 Run the following command to use the baseline model:
