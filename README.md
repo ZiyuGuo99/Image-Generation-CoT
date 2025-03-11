@@ -114,7 +114,7 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 ### 2. Preference Alignment with DPO 🔧
 
 #### 2.1. Initial DPO
-Run the following command to use intial DPO:
+Run the following command to use initial DPO:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
 --prompts_file geneval/prompts/generation_prompts.txt \
