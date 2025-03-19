@@ -10,7 +10,7 @@ ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=1 --nnodes=1 --node_rank=0 -
     --deepspeed scripts/zero3.json \
     --model_name_or_path $CHECKPOINT \
     --version $PROMPT_VERSION \
-    --data_path scripts/train/orm_ft.yaml \
+    --data_path scripts/orm_ft.yaml \
     --image_folder / \
     --video_folder / \
     --mm_tunable_parts="mm_vision_tower,mm_mlp_adapter,mm_language_model" \
