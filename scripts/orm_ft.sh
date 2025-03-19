@@ -5,7 +5,7 @@ CHECKPOINT="lmms-lab/llava-onevision-qwen2-7b-ov"
 echo "CHECKPOINT: ${CHECKPOINT}"
 echo "RUN_NAME: ${RUN_NAME}"
 
-ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=1 --nnodes=1 --node_rank=0 --master_port=12345 \
+ACCELERATE_CPU_AFFINITY=1 torchrun --nproc_per_node=8 --nnodes=1 --node_rank=0 --master_port=12345 \
     llava/train/train_mem.py \
     --deepspeed scripts/zero3.json \
     --model_name_or_path $CHECKPOINT \
