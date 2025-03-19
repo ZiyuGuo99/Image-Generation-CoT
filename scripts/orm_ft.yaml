@@ -1,0 +1,3 @@
+datasets:
+  - json_path: data/orm.json
+    sampling_strategy: "all"

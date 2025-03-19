@@ -74,7 +74,20 @@ git clone https://github.com/LLaVA-VL/LLaVA-NeXT && cd LLaVA-NeXT && pip install
         bash geneval/evaluation/download_models.sh geneval/evaluation/object
         ```
 
-### 0. Baseline Model ([Show-o](https://github.com/showlab/Show-o)) 🎨
+### Prepare Training Data
+   - Download training data from [this link](https://huggingface.co/datasets/ZiyuG/Image-Generation-CoT), and put then under `Image-Generation-CoT/data/`.
+   
+
+### 🚀 Training 
+#### Training ORM
+To fine-tune the ORM model, run the following command:
+```
+bash scripts/orm_ft.sh
+```
+*The remaining training scripts will be released soon.**
+
+### 📊 Evaluation 
+#### 0. Baseline Model ([Show-o](https://github.com/showlab/Show-o)) 🎨
 Run the following command to use the baseline model:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
@@ -82,9 +95,9 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 --metadata_file geneval/prompts/evaluation_metadata.jsonl \
 --config config.yaml 
 ```
-### 1. Scaling Test-time Computation 📈
+#### 1. Scaling Test-time Computation 📈
 
-#### 1.1. Zero-shot ORM
+##### 1.1. Zero-shot ORM
 Run the following command to use the zero-shot ORM:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
@@ -93,7 +106,7 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 --config config.yaml \
 --reward_model orm_zs 
 ```
-#### 1.2. Fine-tuned ORM
+##### 1.2. Fine-tuned ORM
 Run the following command to use the fine-tuned ORM:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
@@ -102,7 +115,7 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 --config config.yaml \
 --reward_model orm_ft
 ```
-#### 1.3. PARM
+##### 1.3. PARM
 Run the following command to use PARM:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
@@ -111,9 +124,9 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 --config config.yaml \
 --reward_model parm 
 ```
-### 2. Preference Alignment with DPO 🔧
+#### 2. Preference Alignment with DPO 🔧
 
-#### 2.1. Initial DPO
+##### 2.1. Initial DPO
 Run the following command to use intial DPO:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
@@ -122,7 +135,7 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 --config config.yaml \
 --dpo_model dpo
 ```
-#### 2.2. Iterative DPO
+##### 2.2. Iterative DPO
 Run the following command to use iterative DPO:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
@@ -131,7 +144,7 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 --config config.yaml \
 --dpo_model dpo_iter
 ```
-#### 2.3. Iterative DPO with PARM Guidance
+##### 2.3. Iterative DPO with PARM Guidance
 Run the following command to use iterative DPO with PARM guidance:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
@@ -140,9 +153,9 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 --config config.yaml \
 --dpo_model dpo_iter_parm_gudie
 ```
-### 3. Reasoning Strategy Integration 🧩
+#### 3. Reasoning Strategy Integration 🧩
 
-#### 3.1. Iterative DPO with PARM Guidance + PARM
+##### 3.1. Iterative DPO with PARM Guidance + PARM
 Run the following command to combine iterative DPO with PARM guidance and PARM:
 ```
 torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py \
