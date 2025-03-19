@@ -1,0 +1,5 @@
+datasets:
+  - json_path: data/orm.json
+    sampling_strategy: "random:70%"
+  - json_path: data/parm.json
+    sampling_strategy: "all"
