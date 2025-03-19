@@ -84,6 +84,11 @@ To fine-tune the ORM model, run the following command:
 ```
 bash scripts/orm_ft.sh
 ```
+#### Training PARM
+To train the PARM model, run the following command:
+```
+bash scripts/parm.sh
+```
 *The remaining training scripts will be released soon.**
 
 ### 📊 Evaluation 
