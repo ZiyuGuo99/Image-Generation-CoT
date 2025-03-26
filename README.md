@@ -2,10 +2,10 @@
 
 Official repository for the paper "[Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step](https://arxiv.org/pdf/2501.13926)".
 
-[[📖 Paper](https://arxiv.org/pdf/2501.13926)] [[🤗 HF Checkpoints](https://huggingface.co/ZiyuG/Image-Generation-CoT)] [[🤗 HF Datasets (coming)]()]
+[[📖 Paper](https://arxiv.org/pdf/2501.13926)] [[🤗 HF Checkpoints](https://huggingface.co/ZiyuG/Image-Generation-CoT)] [[🤗 HF Datasets](https://huggingface.co/datasets/ZiyuG/Image-Generation-CoT)]
 
 ## 💥 News
-- **[2025.03.17]** We release the training code and data for Fine-tuned ORM and PARM 🔧
+- **[2025.03.19]** We release the training code and data for Fine-tuned ORM and PARM 🔧
 - **[2025.02.28]** The paper is accepted by CVPR 2025 🎉
 - **[2025.01.23]** We release the code and ckpts for autoregressive image generation with test-time scaling (ORM, PARM) and DPO 🚀
 - **[2025.01.23]** We release the [arXiv paper](https://arxiv.org/pdf/2501.13926) 🚀
