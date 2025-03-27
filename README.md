@@ -6,9 +6,10 @@ Official repository for the paper "[Can We Generate Images with CoT? Let's Verif
 
 ## 💥 News
 - **[2025.03.19]** We release the training code and data for Fine-tuned ORM and PARM 🔧
-- **[2025.02.28]** The paper is accepted by CVPR 2025 🎉
+- **[2025.02.28]** The conference paper is accepted by **CVPR 2025** 🎉
 - **[2025.01.23]** We release the code and ckpts for autoregressive image generation with test-time scaling (ORM, PARM) and DPO 🚀
 - **[2025.01.23]** We release the [arXiv paper](https://arxiv.org/pdf/2501.13926) 🚀
+- **[2024.11.16]** The conference paper is submitted to CVPR 2025 🚀
 
 ## 👀 Reasoning in Image Generation
 
