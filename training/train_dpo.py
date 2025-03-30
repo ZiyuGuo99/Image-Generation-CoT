@@ -41,7 +41,7 @@ logger = get_logger(__name__, log_level="INFO")
 
 @dataclass
 class OtherArguments:
-    config: Optional[str] = field(default="dpo.yaml")
+    config: Optional[str] = field(default="scripts/dpo.yaml")
 
 
 def get_batch_logps(
