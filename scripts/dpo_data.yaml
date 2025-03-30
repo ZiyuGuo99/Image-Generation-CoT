@@ -1,4 +1,4 @@
 datasets:
-  - json_path: /data4tb/gzy/Code/data/dpo_iter.jsonl
+  - json_path: data/dpo_iter.jsonl
     sampling_strategy: "all"
 
