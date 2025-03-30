@@ -1,0 +1,87 @@
+wandb:
+  entity: null
+  resume: 'auto'
+
+experiment:
+    project: "training"
+    name: "show-o-dpo"
+    output_dir: "outputs/dpo"
+    save_every: 10000
+    eval_every: 2500
+    generate_every: 1000
+    log_every: 1
+    log_grad_norm_every: 20
+
+model:
+    rw_model: "ckpts/parm"
+    vq_model:
+        type: "magvitv2"
+        vq_model_name: "showlab/magvitv2"
+    showo:
+        load_from_showo: False
+        pretrained_model_path: "ckpts/dpo"
+        w_clip_vit: False
+        vocab_size: 58498
+        llm_vocab_size: 50295
+        llm_model_path: 'microsoft/phi-1_5'
+        codebook_size: 8192
+        num_vq_tokens: 256
+        num_new_special_tokens: 10  # <|soi|> <|eoi|> <|sov|> <|eov|> <|t2i|> <|mmu|> <|t2v|> <|v2v|> <|lvg|> <|pad|>
+
+    gradient_checkpointing: True
+
+dataset:
+    gen_type: "t2i"
+    params:
+        data_path: "scripts/dpo_data.yaml"
+        validation_prompts_file: "validation_prompts/showoprompts.txt"
+        shuffle_buffer_size: 1000
+        num_workers: 32
+        resolution: 256
+        pin_memory: True
+        persistent_workers: True
+
+    preprocessing:
+        max_seq_length: 128 # for text tokens
+        resolution: 256
+        center_crop: False
+        random_flip: False
+
+optimizer:
+    name: adamw
+    params: # default adamw params
+        learning_rate: 1e-5
+        scale_lr: False # scale learning rate by total batch size
+        beta1: 0.9
+        beta2: 0.999
+        weight_decay: 0.01
+        epsilon: 1e-8
+
+lr_scheduler:
+    scheduler: "cosine"
+    params:
+        learning_rate: ${optimizer.params.learning_rate}
+        warmup_ratio: 0.1
+
+training:
+    gradient_accumulation_steps: 1
+    batch_size_t2i: 10
+    mixed_precision: "bf16"
+    enable_tf32: True
+    seed: 10086
+    overfit_one_batch: False
+    cond_dropout_prob: 0.1
+    min_masking_rate: 0.0
+    label_smoothing: 0.0
+    max_grad_norm: null
+    guidance_scale: 0.0
+    generation_timesteps: 12
+    beta: 0.1
+    reward_coef: 0.1
+    dpo_coef: 1
+    sft_coef: 0
+    num_epoch: 1
+
+inference:
+    generation_timesteps: 18
+    guidance_scale: 1.75

@@ -1,0 +1,1 @@
+accelerate launch --config_file scripts/zero2.yaml --main_process_port=8388 training/train_dpo.py 
