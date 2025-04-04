@@ -95,10 +95,10 @@ bash scripts/parm.sh
 #### Training DPO
 To train Show-o with DPO, run the following command:
 ```
-bash scripts/dpo.sh
+bash scripts/dpo.sh 
 ```
 
-### 📊 Evaluation 
+### 📊 Evaluation              
 #### 0. Baseline Model ([Show-o](https://github.com/showlab/Show-o)) 🎨
 Run the following command to use the baseline model:
 ```
