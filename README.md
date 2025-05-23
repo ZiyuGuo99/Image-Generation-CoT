@@ -186,14 +186,11 @@ torchrun --nnodes=1 --nproc_per_node=8 --node_rank=0 --master_port=12475 main.py
 If you find this project useful for your research or applications, please kindly cite using this BibTeX:
 
 ```latex
-@misc{guo2025generateimagescotlets,
-      title={Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step}, 
-      author={Ziyu Guo and Renrui Zhang and Chengzhuo Tong and Zhizheng Zhao and Peng Gao and Hongsheng Li and Pheng-Ann Heng},
-      year={2025},
-      eprint={2501.13926},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2501.13926}, 
+@article{guo2025can,
+  title={Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step},
+  author={Guo, Ziyu and Zhang, Renrui and Tong, Chengzhuo and Zhao, Zhizheng and Gao, Peng and Li, Hongsheng and Heng, Pheng-Ann},
+  journal={arXiv preprint arXiv:2501.13926},
+  year={2025}
 }
 ```
 
