@@ -1,8 +1,9 @@
 # Can We Generate Images 🌇 with CoT 🧠?  
 
-Official repository for the paper "[Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step](https://arxiv.org/pdf/2501.13926)".
+Official repository for the paper "[Can We Generate Images with CoT? Let's Verify and Reinforce Image Generation Step by Step](https://arxiv.org/pdf/2501.13926)" and "[Delving into RL for Image Generation with CoT:
+A Study on DPO vs. GRPO](https://arxiv.org/pdf/2505.17017)".
 
-[[📖 Paper](https://arxiv.org/pdf/2501.13926)] [[🤗 HF Checkpoints](https://huggingface.co/ZiyuG/Image-Generation-CoT)] [[🤗 HF Datasets](https://huggingface.co/datasets/ZiyuG/Image-Generation-CoT)]
+[[📖 Paper ImageGen-CoT](https://arxiv.org/pdf/2501.13926)] [[📖 Paper DPO vs. GRPO](https://arxiv.org/pdf/2505.17017)] [[🤗 HF Checkpoints](https://huggingface.co/ZiyuG/Image-Generation-CoT)] [[🤗 HF Datasets](https://huggingface.co/datasets/ZiyuG/Image-Generation-CoT)]
 
 ## 💥 News
 - **[2025.05.23]** **We release our new work for Image Generation exploring different RL Strategies: [DPO vs. GRPO](https://arxiv.org/pdf/2505.17017) 🎉🚀🔥 (will open-source here)**
