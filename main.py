@@ -138,8 +138,8 @@ if __name__ == "__main__":
     elif opt.dpo_model == 'dpo_iter':
         opt.dpo_model_path = 'ckpts/dpo_iter'
         print("Running Iterative DPO...")
-    elif opt.dpo_model == 'dpo_iter_parm_gudie':
-        opt.dpo_model_path = 'ckpts/dpo_iter_parm_gudie'
+    elif opt.dpo_model == 'dpo_iter_parm_guide':
+        opt.dpo_model_path = 'ckpts/dpo_iter_parm_guide'
         print("Running Iterative DPO with PARM Guidance...")
     elif opt.dpo_model == '':
         opt.dpo_model_path = 'showlab/show-o'
